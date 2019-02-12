@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  each val, index in data
+    -
+      var roadTeam = index.split(' at ')[0]
+      var roadProb = Math.round(val['Road Team Win Prob'] * 10) / 10 + '%'
+      var roadSpread = val['Road Team Point Spread'] > 0 ? '-' + val['Road Team Point Spread'] : '+' + -1 * val['Road Team Point Spread']
+      var homeTeam = index.split(' at ')[1]
+      var homeProb = Math.round((100 - val['Road Team Win Prob']) * 10) / 10 + '%'
+      var homeSpread = val['Road Team Point Spread'] > 0 ? '+' + val['Road Team Point Spread'] : val['Road Team Point Spread']
+    .game
+      table
+        tbody
+          tr
+            th
+            th
+            th Win Prob.
+            th Pt. Spread
+          tr
+            td
+              img(src='images/' + roadTeam + '.png', width='32', height='32')
+            td #{roadTeam}
+            td #{roadProb}
+            td #{roadSpread}
+          tr
+            td
+              img(src='images/' + homeTeam + '.png', width='32', height='32')
+            td #{homeTeam}
+            td #{homeProb}
+            td #{homeSpread}

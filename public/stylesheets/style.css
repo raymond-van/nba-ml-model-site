@@ -1,0 +1,139 @@
+/* Global */
+html {
+    background-color: rgb(250, 250, 250);
+    font-family: 'Exo 2', sans-serif;
+  }
+  /* Header */
+  
+header {
+  text-align: center;
+}
+
+.head-container {
+  display: inline-block;
+  margin-top: 1%;
+}
+
+.title {
+  float: left;
+  text-align: center;
+}
+
+.title p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+}
+
+.nba-logo1 {
+  float: left;
+}
+
+.nba-logo2 {
+  float: left;
+}
+
+/* Main */
+
+.date-container {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+#date {
+  margin-bottom: -.1%;
+}
+
+hr {
+  border-color: white;
+}
+
+.predictions-container {
+  padding-bottom: auto;
+  height: auto;
+  padding-bottom: 10%;
+}
+
+.todays-games {
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 50%;
+  margin: auto;
+  padding-bottom: 5%;
+}
+
+.game {
+  border: solid 1px rgb(160, 160, 160)
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+}
+
+tr td:nth-child(3) {
+  text-align: center;
+}
+
+tr td:nth-child(4) {
+  text-align: center;
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .todays-games {
+      display: grid;
+      grid-gap: 5%;
+      grid-template-columns: repeat(2, 1fr);
+      width: 50%;
+      margin: auto;
+      padding-bottom: 5%;
+  }
+}
+@media (max-width: 640px) {
+  .todays-games {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 50%;
+      margin: auto;
+      padding-bottom: 5%;
+  }
+
+  .title {
+      float: left;
+      text-align: center;
+      font-size: 12px;
+  }
+
+  .logo {
+      width: 60px;
+      height: 60px;
+  }
+  .date-container {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 440px) {
+  .todays-games {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 50%;
+      margin: auto;
+      padding-bottom: 5%;
+  }
+
+  .title {
+      float: left;
+      text-align: center;
+      font-size: 12px;
+  }
+
+  .logo {
+      width: 0px;
+      height: 0px;
+  }
+  .date-container {
+      font-size: 12px;
+  }
+}

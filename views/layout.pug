@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title NBA ML Predictions
+    meta(name='author', content='Raymond Van')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="shortcut icon" href="images/favicon3.ico" type="image/x-icon")
+    link(rel="icon" href="images/favicon3.ico" type="image/x-icon")
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Mono|Exo+2', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/normalize.css')
+    link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/style.css')
+  body
+    header
+      .head-container
+        .nba-logo1
+          img.logo(src='images/nba.png')
+        .title
+          h1 2018-19 NBA ML Predictions
+          p  Updates everyday at 12:00 AM (ET)
+        .nba-logo2
+          img.logo(src='images/nba.png')
+    section.date-container
+      .todays-date
+        p#date
+        //- p#time Dont need time?
+        script.
+          var dateObj = new Date()
+          const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          var month = monthNames[dateObj.getUTCMonth()];
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          newDate = month + " " + day + ", " + year;
+          document.getElementById("date").innerHTML = newDate;
+          //- document.getElementById("time").innerHTML = dateObj.toLocaleTimeString();
+          //- var myVar=setInterval(function(){myTimer()},1000);
+          //- function myTimer() {
+          //-     var time = new Date();
+          //-     document.getElementById("time").innerHTML = time.toLocaleTimeString();
+          //- }
+        hr(width='40%')
+    section.predictions-container
+      .todays-games
+        block content
