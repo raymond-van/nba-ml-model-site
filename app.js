@@ -16,9 +16,8 @@ app.get('/', (req, res) => {
   MongoClient.connect(url, function(err, client) {
     if (err) throw err;
     var db = client.db("nba");
-    db.collection("predictions").find({"_id": ObjectId("5c60f86abeb2772ce4c76a7f")}, {projection:{ _id: 0 }}).toArray(function(err, result) {
+    db.collection("predictions").find({},{projection:{ _id: 0 }}).limit(1).sort({$natural:-1}).toArray(function(err, result) {
       if (err) throw err;
-      // console.log(Object.keys(result[0]));
       res.render('index', { data: result[0] });
     });
   });
