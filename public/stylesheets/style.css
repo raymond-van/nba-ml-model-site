@@ -61,6 +61,7 @@ hr {
   width: 50%;
   margin: auto;
   padding-bottom: 5%;
+  justify-content: center;
 }
 
 .game {
