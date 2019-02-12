@@ -5,7 +5,7 @@ var ObjectId = require('mongodb').ObjectID
 
 const app = express();
 
-var url = "mongodb+srv://rvan3:vanraymond@nba-ml-xmtqa.mongodb.net/nba?retryWrites=true";
+var url = process.env.MONGODB_URI || "mongodb+srv://rvan3:vanraymond@nba-ml-xmtqa.mongodb.net/nba?retryWrites=true";
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
