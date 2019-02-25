@@ -24,7 +24,6 @@ html
     section.date-container
       .todays-date
         p#date
-        //- p#time Dont need time?
         script.
           var dateObj = new Date()
           const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -33,12 +32,6 @@ html
           var year = dateObj.getUTCFullYear();
           newDate = month + " " + day + ", " + year;
           document.getElementById("date").innerHTML = newDate;
-          //- document.getElementById("time").innerHTML = dateObj.toLocaleTimeString();
-          //- var myVar=setInterval(function(){myTimer()},1000);
-          //- function myTimer() {
-          //-     var time = new Date();
-          //-     document.getElementById("time").innerHTML = time.toLocaleTimeString();
-          //- }
         hr(width='40%')
     section.predictions-container
       .todays-games
